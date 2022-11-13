@@ -351,3 +351,4 @@ MigrationBackup/
 /build
 /CMakeFiles
 /CMakeCache.txt
+/libs
