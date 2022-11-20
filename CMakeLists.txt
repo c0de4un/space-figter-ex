@@ -5,13 +5,14 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # CMake Version
-cmake_minimum_required(VERSION 3.18.1)
+include( "cmake/constants.cmake" )
+cmake_minimum_required( VERSION ${PROJECT_CMAKE_VERSION} )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PROJECT
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-project("Hello-GLFW")
+project( "Space Figter EX" VERSION ${APP_VERSION} LANGUAGES C CXX )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # HEADERS
@@ -38,6 +39,12 @@ set( SOURCES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Add executable object
-add_executable(game ${HEADERS} ${SOURCES})
+add_executable( game ${HEADERS} ${SOURCES} )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# LIBRARIES
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+include( "cmake/libs.cmake" )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
