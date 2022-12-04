@@ -14,8 +14,14 @@
 // INCLUDES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Include zEngine
+// Include zEngine.Core
 #include <zero/core/zero.hpp>
+
+// Include zEngine.Windows
+#include <zero/windows/zero_win.hpp>
+
+// Include zero::core::WinLogger
+#include <zero/windows/metrics/log/WinLogger.hpp>
 
 // Include GameApp
 #include "../../core/public/game/core/app/GameApp.hpp"

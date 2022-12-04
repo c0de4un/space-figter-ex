@@ -25,12 +25,16 @@ int main()
 {
     std::cout << "Initializing ...\n";
 
+    zLog::Initialize(new zLogger());
+
     sfGameApp *const game( new sfGameApp() );
     sfGameApp::Initilize(game);
 
     std::cout << "Terminating ...\n";
 
     sfGameApp::Terminate();
+
+    zLog::Terminate();
 
     std::cout << "Press any key to exit\n";
     std::cin.get();
