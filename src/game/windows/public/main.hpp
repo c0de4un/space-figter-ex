@@ -17,6 +17,9 @@
 // Include zEngine
 #include <zero/core/zero.hpp>
 
+// Include GameApp
+#include "../../core/public/game/core/app/GameApp.hpp"
+
 // Include STL
 #include <iostream>
 

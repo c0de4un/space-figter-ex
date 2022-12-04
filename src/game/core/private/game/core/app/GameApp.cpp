@@ -15,27 +15,34 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // HEADER
-#include "../public/main.hpp"
+#ifndef CODE4UN_SF_CORE_GAME_APP_HPP
+#include "../../../../public/game/core/app/GameApp.hpp"
+#endif // !CODE4UN_SF_CORE_GAME_APP_HPP
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// METHODS
+// c0de4un::sf::GameApp
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-int main()
+namespace c0de4un
 {
-    std::cout << "Initializing ...\n";
 
-    sfGameApp *const game( new sfGameApp() );
-    sfGameApp::Initilize(game);
+    namespace sf
+    {
 
-    std::cout << "Terminating ...\n";
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    sfGameApp::Terminate();
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // CONSTRUCTORS & DESTRUCTORS
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    std::cout << "Press any key to exit\n";
-    std::cin.get();
+        GameApp::GameApp() ZERO_NOEXCEPT = default;
 
-    return 0;
+        GameApp::~GameApp() ZERO_NOEXCEPT = default;
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    }
+
 }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

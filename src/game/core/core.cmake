@@ -1,18 +1,23 @@
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# CMake
+# HEADERS
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set( PROJECT_CMAKE_VERSION 3.22.1 )
-set( APP_VERSION 0.1.1 )
+set( APP_CORE_PUBLIC "${GAME_CORE_DIR}/public/game/core/" )
+set( APP_HEADERS
+    # Application
+    "${APP_CORE_PUBLIC}app/GameApp.hpp"
+    ${APP_HEADERS} )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# DIRS
+# SOURCES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set( APP_SRC_DIR ${CMAKE_SOURCE_DIR} )
-set( ZERO_DIR "${APP_SRC_DIR}/src/engine" )
-set( APP_SRC_DIR "${APP_SRC_DIR}/src/game" )
+set( APP_CORE_PRIVATE "${GAME_CORE_DIR}/private/game/core/" )
+set( APP_SOURCES
+    # Application
+    "${APP_CORE_PRIVATE}app/GameApp.cpp"
+    ${APP_SOURCES} )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

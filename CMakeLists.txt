@@ -9,6 +9,12 @@ include( "cmake/constants.cmake" )
 cmake_minimum_required( VERSION ${PROJECT_CMAKE_VERSION} )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# CONFIGS
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+include( "cmake/globals.cmake" )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PROJECT
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -35,16 +41,56 @@ set( SOURCES
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# MODULES
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Configs
+include( "${ZERO_DIR}/cmake/platform.cmake" )
+include( "${ZERO_DIR}/cmake/build_types.cmake" )
+
+# Core
+include( "${GAME_CORE_DIR}/core.cmake" )
+
+# Windows
+if ( PLATFORM STREQUAL "windows" )
+    include( "${GAME_WIN_DIR}/windows.cmake" )
+endif ( PLATFORM STREQUAL "windows" )
+
+# Linux
+if ( PLATFORM STREQUAL "linux" )
+    include( "${GAME_LINUX_DIR}/linux.cmake" )
+endif ( PLATFORM STREQUAL "linux" )
+
+# Android
+if ( PLATFORM STREQUAL "android" )
+    include( "${GAME_ANDROID_DIR}/android.cmake" )
+endif ( PLATFORM STREQUAL "android" )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # BUILD
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Add executable object
-add_executable( game ${HEADERS} ${SOURCES} )
+# Windows
+if ( PLATFORM STREQUAL "windows" )
+    include( "${GAME_WIN_DIR}/build.cmake" )
+endif ( PLATFORM STREQUAL "windows" )
+
+# Linux
+if ( PLATFORM STREQUAL "linux" )
+    include( "${GAME_LINUX_DIR}/build.cmake" )
+endif ( PLATFORM STREQUAL "linux" )
+
+# Android
+if ( PLATFORM STREQUAL "android" )
+    include( "${GAME_ANDROID_DIR}/build.cmake" )
+endif ( PLATFORM STREQUAL "android" )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # LIBRARIES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-include( "cmake/libs.cmake" )
+# Link executable with libraries
+include( "cmake/${PLATFORM}_libs.cmake" )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
