@@ -23,10 +23,22 @@
 // Include zero::core::WinLogger
 #include <zero/windows/metrics/log/WinLogger.hpp>
 
+// Include zero::core::MemoryManager
+#ifndef ZERO_CORE_MEMORY_MANAGER_HPP
+#include <zero/core/memory/MemoryManager.hpp>
+#endif /// !ZERO_CORE_MEMORY_MANAGER_HPP
+
+// Include zero::ecs
+#ifndef ZERO_ECS_HPP
+#include <zero/core/ecs/ecs.hpp>
+#endif /// !ZERO_ECS_HPP
+
 // Include GameApp
 #include "../../core/public/game/core/app/GameApp.hpp"
 
 // Include STL
 #include <iostream>
+
+// Include zero::win::WinGraphics
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

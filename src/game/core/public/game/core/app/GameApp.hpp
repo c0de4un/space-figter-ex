@@ -17,10 +17,10 @@
 // INCLUDES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Include zero::core::Application
-#ifndef ZERO_CORE_APPLICATION_HPP
-#include <zero/core/app/Application.hpp>
-#endif /// !ZERO_CORE_APPLICATION_HPP
+// Include zero::core::Game
+#ifndef ZERO_CORE_GAME_HPP
+#include <zero/core/game/Game.hpp>
+#endif /// !ZERO_CORE_GAME_HPP
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // TYPES
@@ -46,7 +46,7 @@ namespace c0de4un
             \version 0.1
             \date 03.12.2022
         */
-        ZERO_API class GameApp final : public zApplication
+        ZERO_API class GameApp final : public zGame
         {
             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -70,7 +70,7 @@ namespace c0de4un
                     \brief GameApp default constructor
                     \throws doesn't throw any exceptions
                 */
-                explicit GameApp() ZERO_NOEXCEPT;
+                explicit GameApp();
 
                 /*!
                     \brief GameApp destructor

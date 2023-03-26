@@ -35,7 +35,7 @@ namespace c0de4un
         // CONSTRUCTORS & DESTRUCTORS
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        GameApp::GameApp() ZERO_NOEXCEPT = default;
+        GameApp::GameApp() = default;
 
         GameApp::~GameApp() ZERO_NOEXCEPT = default;
 
